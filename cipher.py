@@ -1,12 +1,15 @@
 import string
 
-lowercase = string.ascii_lowercase
-def cipherEncrypt(word, substituteBy):
-    lWord = word.lower()
+alphabets = string.ascii_lowercase
+upperAlpha = string.ascii_uppercase
+def cipherEncrypt(message, substituteBy):
     encrypted = ""
-    for i in lWord:
-        if i in lowercase:
-            encryptLetter = lowercase[lowercase.index(i) + substituteBy]
+    for i in message:
+        if i in alphabets:
+            encryptLetter = alphabets[alphabets.index(i) + substituteBy]
+            encrypted += encryptLetter
+        elif i in upperAlpha:
+            encryptLetter = upperAlpha[upperAlpha.index(i) + substituteBy]
             encrypted += encryptLetter
         else:
             encrypted += i
@@ -17,17 +20,20 @@ def cipherDecrypt(message, subsitutedValue):
 
     for i in message:
     
-        if i in lowercase:
-            decryptedLetter = lowercase[lowercase.index(i) - subsitutedValue]
+        if i in alphabets:
+            decryptedLetter = alphabets[alphabets.index(i) - subsitutedValue]
+            decrypted += decryptedLetter
+        elif i in upperAlpha:
+            decryptedLetter = upperAlpha[upperAlpha.index(i) - subsitutedValue]
             decrypted += decryptedLetter
         else:
             decrypted += i
     
     return decrypted
-    
-    
+
+
 print(cipherEncrypt("I like fries", 2))
 # returns "k nkmg htkgu"
 
-print(cipherDecrypt("k nkmg htkgu", 2))
-# returns "i like fries"
+print(cipherDecrypt("K nkmg htkgu", 2))
+# returns "I like fries"
