@@ -1,39 +1,53 @@
+#These are the functions we can use to encrypt and decrypt the message
+#when the subsituted value is known between the two people.
+
 import string
 
-alphabets = string.ascii_lowercase
+lowerAlpha = string.ascii_lowercase
 upperAlpha = string.ascii_uppercase
+
 def cipherEncrypt(message, substituteBy):
     encrypted = ""
     for i in message:
-        if i in alphabets:
-            encryptLetter = alphabets[alphabets.index(i) + substituteBy]
+
+        if i in lowerAlpha:
+            indexNum = lowerAlpha.index(i) + substituteBy + 1
+            encryptLetter = lowerAlpha[ (indexNum - len(lowerAlpha)) if (indexNum // len(lowerAlpha) == 1) else indexNum]
             encrypted += encryptLetter
+
         elif i in upperAlpha:
-            encryptLetter = upperAlpha[upperAlpha.index(i) + substituteBy]
+            indexNum = upperAlpha.index(i) + substituteBy + 1
+            encryptLetter = upperAlpha[ (indexNum- len(upperAlpha)) if (indexNum // len(upperAlpha) == 1) else indexNum]
             encrypted += encryptLetter
+
         else:
             encrypted += i
+
     return encrypted
 
 def cipherDecrypt(message, subsitutedValue):
     decrypted = ""
 
     for i in message:
-    
-        if i in alphabets:
-            decryptedLetter = alphabets[alphabets.index(i) - subsitutedValue]
+
+        if i in lowerAlpha:
+            indexNum = lowerAlpha.index(i) - subsitutedValue - 1
+            decryptedLetter = lowerAlpha[ (indexNum- len(lowerAlpha)) if (indexNum // len(lowerAlpha) == 1) else indexNum]
             decrypted += decryptedLetter
+
         elif i in upperAlpha:
-            decryptedLetter = upperAlpha[upperAlpha.index(i) - subsitutedValue]
+            indexNum = upperAlpha.index(i) - subsitutedValue - 1
+            decryptedLetter = upperAlpha[ (indexNum- len(upperAlpha)) if (indexNum // len(upperAlpha) == 1) else indexNum]
             decrypted += decryptedLetter
+
         else:
             decrypted += i
-    
+
     return decrypted
 
 
-print(cipherEncrypt("I like fries", 2))
-# returns "k nkmg htkgu"
+print(cipherEncrypt("I like fries & burgers", 2))
+# returns "L olnh iulhv & exujhuv"
 
-print(cipherDecrypt("K nkmg htkgu", 2))
-# returns "I like fries"
+print(cipherDecrypt("L olnh iulhv & exujhuv", 2))
+# returns "I like fries & burgers"
