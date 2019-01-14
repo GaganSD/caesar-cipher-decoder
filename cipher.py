@@ -2,7 +2,6 @@
 #when the subsituted value is known between the two people.
 
 import string
-
 lowerAlpha = string.ascii_lowercase
 upperAlpha = string.ascii_uppercase
 
@@ -46,8 +45,6 @@ def cipherDecrypt(message, subsitutedValue):
     return decrypted
 
 
-print(cipherEncrypt("I like fries & burgers", 2))
-# returns "L olnh iulhv & exujhuv"
+# print(cipherDecrypt("L olnh iulhv", 2))
+# returns "I like fries"
 
-print(cipherDecrypt("L olnh iulhv & exujhuv", 2))
-# returns "I like fries & burgers"
