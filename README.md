@@ -9,7 +9,8 @@ Whenever you write long letter or an email in English, you unintentionally leave
 
 ![E](https://github.com/Gagan-Devagiri/caesar-cipher/blob/master/result-analysis/english-alphabet-fingerprint.png)
 
-The flaw that Al-kindi found was that, when you analyze the frequency of the encrypted message, a different letter now recurs the most. If you check how far the letter is shifted from three, you could find the value the message is substituted by. For example, if 'h' is the most popular letter in the encrypted message, then the shift was likely three. Now by reversing the shift, we could get the original message easily. I encrypted the same fable by shifting the alphabets by three letters and it turns out that h is indeed the most popular letter here. 
+The flaw that Al-kindi found was that, when you analyze the frequency of the encrypted message, a different letter now recurs the most. If you check how far the letter is shifted from three, you could find the value the message is substituted by. For example, if 'h' is the most popular letter in the encrypted message, then the shift was likely three. Now by reversing the shift, we could get the original message easily. I encrypted the same fable by shifting the alphabets by three letters and it turns out that h is indeed the most popular letter here.
+
 ![h](https://github.com/Gagan-Devagiri/caesar-cipher/blob/master/result-analysis/substituted%20by%20two.png)
 
 
