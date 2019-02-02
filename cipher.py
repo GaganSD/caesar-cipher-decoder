@@ -3,36 +3,28 @@
 
 from sys import exit
 from string import ascii_lowercase, ascii_uppercase
-import operator
 
 
-# Uses dictionaries to 
-ops = {
-    "+": operator.add,
-    "-": operator.sub
-}
+usrCmd = input("Do you want the code to be encrypted or decrypted ? \n").lower()
 
+message = input("Enter the message that needs to be modified : \n" )
 
-usrCmd = input("Do you want the code to be encrypted or decrypted ? \n")
-usrCmd.lower()
+substituteBy = int(input("By what value would you like to substitute the alphabets ? \n"))
+
 
 if "encrypt" in usrCmd :
+    substituteBy += 1
     sign = "+"
 elif "decrypt" in usrCmd :
-    sign = "-"
+    substituteBy = - substituteBy - 1
 else:
-    print("Computer couldn't understand your input. \n Try again and please enter a valid input.")
+    print("Computer couldn't understand your input. \n command not recognized.")
     exit(0)
 
 
-ops_func = ops[sign]
-
-
-message = input("Enter the message that needs to be modified : \n" )
-substituteBy = int(input("By what value would you like to substitute the alphabets ? \n"))
-
 lowerAlpha = ascii_lowercase
 upperAlpha = ascii_uppercase
+
 
 def cipher(message, substituteBy):
     """
@@ -48,17 +40,18 @@ def cipher(message, substituteBy):
     for i in message:
 
         if i in lowerAlpha:
-            indexNum = lowerAlpha.index(i) + ops_func(substituteBy, 1)
+            indexNum = lowerAlpha.index(i) + substituteBy
             encryptLetter = lowerAlpha[ (indexNum - len(lowerAlpha)) if (indexNum // len(lowerAlpha) == 1) else indexNum]
             encrypted += encryptLetter
 
         elif i in upperAlpha:
-            indexNum = upperAlpha.index(i) + ops_func(substituteBy, 1)
-            encryptLetter = upperAlpha[ (indexNum- len(upperAlpha)) if (indexNum // len(upperAlpha) == 1) else indexNum]
+            indexNum = upperAlpha.index(i) + substituteBy
+            encryptLetter = upperAlpha[ (indexNum - len(upperAlpha)) if (indexNum // len(upperAlpha) == 1) else indexNum]
             encrypted += encryptLetter
 
         else:
             encrypted += i
+
 
     return encrypted
 
