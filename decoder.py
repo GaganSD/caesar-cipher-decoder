@@ -1,9 +1,9 @@
-from cipher import cipherDecrypt
-import string
+from cipher import Encrypter
+from string import ascii_lowercase, ascii_uppercase
 import matplotlib.pyplot as plt
 
-alphabets = string.ascii_lowercase + string.ascii_uppercase
-lower_case = string.ascii_lowercase
+alphabets = ascii_lowercase + ascii_uppercase
+lower_case = ascii_lowercase
 
 
 def count_value(text_file):
@@ -54,16 +54,8 @@ def main(dictionary):
     sorted_data = sort_dict(frequencies)
     return sorted_data
 
-
-frequencies = count_value(Encrypted_text)
-sorted_data = sort_dict(frequencies)
-highest_recurred = most_occured(sorted_data)
-
-
 Encrypted_text = """
 WKH ERDVWLQJ WUDYHOOHU
-
-
 D Pdq rqfh zhqw deurdg rq klv wudyhov, dqg zkhq kh fdph krph kh
 kdg zrqghuixo wdohv wr whoo ri wkh wklqjv kh kdg grqh lq iruhljq
 frxqwulhv. Dprqj rwkhu wklqjv, kh vdlg kh kdg wdnhq sduw lq d
@@ -72,9 +64,12 @@ frxog ehdw. "Mxvw jr wr Ukrghv dqg dvn wkhp," kh vdlg; "hyhub rqh zloo
 whoo brx lw'v wuxh." Exw rqh ri wkrvh zkr zhuh olvwhqlqj vdlg, "Li brx
 fdq mxps dv zhoo dv doo wkdw, zh qhhgq'w jr wr Ukrghv wr suryh lw.
 Ohw'v mxvw lpdjlqh wklv lv Ukrghv iru d plqxwh: dqg qrz--mxps!"
-
     Ghhgv, qrw zrugv.
 """
+
+frequencies = count_value(Encrypted_text)
+sorted_data = sort_dict(frequencies)
+highest_recurred = most_occured(sorted_data)
 
 D = main(Encrypted_text)
 
@@ -90,6 +85,6 @@ substitudedValue = lower_case.index(highest_recurred) - 5
 print(f"\nThe letter that occured the most is : {highest_recurred}")
 print("\nWe know that the in the English Alphabet the letter with the highest frequency is usually the letter 'e'")
 print("\nHence, the shift in the letter leads us to the change in substitution.") 
-print("\nHere the letters are substitued by:", substitudedValue)
+print("\nHere the letters are substitued by:", substitudedValue + 1)
 
-print("The message, after decryption is : ", cipherDecrypt(Encrypted_text, substitudedValue))
+print("The message, after decryption is : ", Encrypter(Encrypted_text, -substitudedValue - 1))

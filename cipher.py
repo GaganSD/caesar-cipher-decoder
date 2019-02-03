@@ -5,28 +5,7 @@ from sys import exit
 from string import ascii_lowercase, ascii_uppercase
 
 
-usrCmd = input("Do you want the code to be encrypted or decrypted ? \n").lower()
-
-message = input("Enter the message that needs to be modified : \n" )
-
-substituteBy = int(input("By what value would you like to substitute the alphabets ? \n"))
-
-
-if "encrypt" in usrCmd :
-    substituteBy += 1
-    sign = "+"
-elif "decrypt" in usrCmd :
-    substituteBy = - substituteBy - 1
-else:
-    print("Computer couldn't understand your input. \n command not recognized.")
-    exit(0)
-
-
-lowerAlpha = ascii_lowercase
-upperAlpha = ascii_uppercase
-
-
-def cipher(message, substituteBy):
+def Encrypter(message, substituteBy):
     """
     Parameters:
         message - A string that needs to be encrypted/decrypted
@@ -36,6 +15,10 @@ def cipher(message, substituteBy):
     Returns:
         The encrypted/decrypted message.
     """
+
+    lowerAlpha = ascii_lowercase
+    upperAlpha = ascii_uppercase
+
     encrypted = ""
     for i in message:
 
@@ -56,8 +39,26 @@ def cipher(message, substituteBy):
     return encrypted
 
 
-print( cipher(message, substituteBy) )
+if __name__ == '__main__':
+
+    lowerAlpha = ascii_lowercase
+    upperAlpha = ascii_uppercase
+
+    usrCmd = input("Would you like to encrypt or decrypt your message? \n").lower()
+
+    message = input("Enter the message that needs to be modified : \n" )
+
+    substituteBy = int(input("By what value would you like to substitute the alphabets ? \n"))
 
 
-# print(cipher("L olnh iulhv", 2))
-# returns "I like fries"
+    if "encrypt" in usrCmd :
+        substituteBy += 1
+        print(Encrypter(message, substituteBy))
+
+    elif "decrypt" in usrCmd :
+        substituteBy = - substituteBy - 1
+        print(Encrypter(message, substituteBy))
+
+    else:
+        print("Computer couldn't understand your input. \n command not recognized.")
+        exit(0)
