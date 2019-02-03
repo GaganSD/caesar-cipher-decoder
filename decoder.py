@@ -7,20 +7,6 @@ import matplotlib.pyplot as plt
 alphabets = ascii_lowercase + ascii_uppercase
 lower_case = ascii_lowercase
 
-Encrypted_text = """
-WKH ERDVWLQJ WUDYHOOHU:
-
-D Pdq rqfh zhqw deurdg rq klv wudyhov, dqg zkhq kh fdph krph kh
-kdg zrqghuixo wdohv wr whoo ri wkh wklqjv kh kdg grqh lq iruhljq
-frxqwulhv. Dprqj rwkhu wklqjv, kh vdlg kh kdg wdnhq sduw lq d
-mxpslqj-pdwfk dw Ukrghv, dqg kdg grqh d zrqghuixo mxps zklfk qr rqh
-frxog ehdw. "Mxvw jr wr Ukrghv dqg dvn wkhp," kh vdlg; "hyhub rqh zloo
-whoo brx lw'v wuxh." Exw rqh ri wkrvh zkr zhuh olvwhqlqj vdlg, "Li brx
-fdq mxps dv zhoo dv doo wkdw, zh qhhgq'w jr wr Ukrghv wr suryh lw.
-Ohw'v mxvw lpdjlqh wklv lv Ukrghv iru d plqxwh: dqg qrz--mxps!"
-
-Ghhgv, qrw zrugv.
-"""
 
 def count_value(text_file):
 
@@ -47,6 +33,7 @@ def sort_dict(dict1):
 
     for keys in dict1:
         alist.append(keys)
+
     alist.sort()
     
     for i in alist:
@@ -91,7 +78,7 @@ plt.show()
 substitudedValue = lower_case.index(highest_recurred) - 5
 
 print(f"""\nThe letter that occured the most is : {highest_recurred}
-\nWe know that the in the English Alphabet the letter with the highest frequency is usually the letter 'e'")
-\nHence, the shift in the letter leads us to the change in substitution.") 
-\nHere the letters are substitued by:", substitudedValue + 1)
+We know that the in the English Alphabet the letter with the highest frequency is usually the letter 'e'")
+Hence, the shift in the letter leads us to the change in substitution.") 
+Here the letters are substitued by:", substitudedValue + 1)
 The message, after decryption is : ", {Encrypter(Encrypted_text, - substitudedValue - 1)}""")
