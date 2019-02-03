@@ -25,7 +25,7 @@ To reproduce the results of my cipher and to explore it with other messages, in 
 - I've made cipher interactive, it will walk you through the entire process of encrypting your message.
 - For the decoder, I've made another python file. You can add your custom message in it. Since, the decoder works on the principle of linguistics and statistics, I recommend you to keep the message atleast a paragraph long. Longer the message, more accurate the result.
 
-#Screenshots:
+## Screenshots:
 - Screenshot of the cipher in action:
 
 ![h](https://github.com/Gagan-Devagiri/caesar-cipher/blob/master/result-analysis/screenshot-cipher.png)
