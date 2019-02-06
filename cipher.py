@@ -44,11 +44,11 @@ if __name__ == '__main__':
     lowerAlpha = ascii_lowercase
     upperAlpha = ascii_uppercase
 
-    usrCmd = input("Would you like to encrypt or decrypt your message? \n").lower()
+    usrCmd = input("Would you like to encrypt or decrypt your message? \n > ").lower()
 
-    message = input("Enter the message that needs to be modified : \n" )
+    message = input("Enter the message that needs to be modified : \n > " )
 
-    substituteBy = int(input("By what value would you like to substitute the alphabets ? \n"))
+    substituteBy = int(input("By what value would you like to substitute the alphabets ? \n > "))
 
 
     if "encrypt" in usrCmd :
