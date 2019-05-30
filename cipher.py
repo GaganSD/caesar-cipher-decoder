@@ -16,16 +16,16 @@ def Encrypter(message, substituteBy):
         The encrypted/decrypted message.
     """
 
-    lowerAlpha = ascii_lowercase
-    upperAlpha = ascii_uppercase
+    # lowerAlpha = ascii_lowercase
+    # upperAlpha = ascii_uppercase
 
     encrypted = ""
     for i in message:
 
         if i in lowerAlpha:
             indexNum = lowerAlpha.index(i) + substituteBy
-            encryptLetter = lowerAlpha[ (indexNum - len(lowerAlpha)) if (indexNum // len(lowerAlpha) == 1) else indexNum]
-            encrypted += encryptLetter
+            encryptLetter = lowerAlpha[ (indexNum - len(lowerAlpha)) if (indexNum // len(lowerAlpha) == 1) else indexNum] #more than 26
+            encrypted += encryptLetter 
 
         elif i in upperAlpha:
             indexNum = upperAlpha.index(i) + substituteBy
@@ -43,12 +43,14 @@ if __name__ == '__main__':
 
     lowerAlpha = ascii_lowercase
     upperAlpha = ascii_uppercase
+    
+    usrCmd = ""
+    while (False if (("encrypt" in usrCmd) or ("decrypt" in usrCmd)) else True):
+        usrCmd = input("Would you like to encrypt or decrypt your message? \n>").lower()
 
-    usrCmd = input("Would you like to encrypt or decrypt your message? \n").lower()
+        message = input("Enter the message that needs to be modified : \n>" )
 
-    message = input("Enter the message that needs to be modified : \n" )
-
-    substituteBy = int(input("By what value would you like to substitute the alphabets ? \n"))
+        substituteBy = int(input("By what value would you like to substitute the alphabets ? \n>"))
 
 
     if "encrypt" in usrCmd :
