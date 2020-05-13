@@ -3,8 +3,9 @@
 # The Caesar's Cipher
 
 ## Inspiration & introduction:
-While exploring cryptography I found a video that peaked my interest in the flaws of the infamous Caesar's cipher. 
+While exploring cryptography I found a Khan Academy's video that peaked my interest in the flaws of the infamous Caesar's cipher. 
 
+### Theory: 
 Whenever you write long letter or an email in English, you unintentionally leave a fingerprint behind; if you scan a message you've written and count the frequency of each letter, you'll find a fairly consistent pattern. 'e' will most likely be the most recurring letter in the entire message. I took a random fable from the internet to test this out and the result I attained was what was to be expected from it. 'e' was indeed the most popular letter. This fact holds true for any message that is long enough.
 
 ![E](https://github.com/Gagan-Devagiri/caesar-cipher/blob/master/result-analysis/english-alphabet-fingerprint.png)
@@ -17,13 +18,13 @@ The flaw that Al-kindi found was that, when you analyze the frequency of the enc
 ## Prerequisites & Instructions:
 To reproduce the results of my cipher and to explore it with other messages, in addition to python you must have matplotlib installed. 
 
--  You can download Python by following this link: https://www.python.org/downloads/ 
--  Choose your operating system, follow the setup wizard and you'll have Python installed in no time.
-- Make sure that you check the box that says "Add Python to Path". This is important.
-- You can choose to download matplotlib seperately using pip, but for convenience with the whole process, I recommend you to download [Spyder](https://www.spyder-ide.org/)
-- Once you have that installed, you can simply download my code from Github and you should be able to run the programs easily.
-- I've made cipher interactive, it will walk you through the entire process of encrypting your message.
-- For the decoder, I've made another python file. You can add your custom message in it. Since, the decoder works on the principle of linguistics and statistics, I recommend you to keep the message atleast a paragraph long. Longer the message, more accurate the result.
+-  Download and install Python the recommended way: https://www.python.org/downloads/
+-  Install matplotlib package. You can do this in the terminal with ``pip install matplotlib``
+-  Clone my repository
+-  The cipher is interactive, and it will walk you through exploring it.
+-  Add your message in the textFile and run the relevant file. 
+
+**Remember**: The decoder works on the principle of linguistics and statistics, so longer the message, more accurate the result.
 
 ## Screenshots:
 - Screenshot of the cipher in action:
@@ -35,8 +36,4 @@ To reproduce the results of my cipher and to explore it with other messages, in 
 ![h](https://github.com/Gagan-Devagiri/caesar-cipher/blob/master/result-analysis/screenshot-matplot-results.png)
 
 ## Author:
- - Gagan Devagiri
-
-## License:
-- MIT License
-
+Gagan Devagiri © [MIT](https://github.com/GaganSD/caesar-cipher-decoder/blob/master/LICENSE)
